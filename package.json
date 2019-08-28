@@ -1,0 +1,31 @@
+{
+  "name": "polln_mvp2",
+  "version": "1.0.0",
+  "description": "polln mvp2",
+  "author": "philhosophy",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/router": "^1.4.0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "firebase": "^6.4.0",
+    "firebase-tools": "^7.2.2",
+    "js-cookie": "^2.2.1",
+    "localforage": "^1.7.3",
+    "nuxt": "^2.0.0",
+    "nuxt-fire": "^2.0.0",
+    "ripple-lib": "^1.2.4",
+    "vue-inline-text-editor": "^1.0.1",
+    "vuex-persist": "^2.0.1",
+    "vuex-persistedstate": "^2.5.4",
+    "vuexfire": "^3.1.2"
+  },
+  "devDependencies": {}
+}
