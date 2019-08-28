@@ -3,14 +3,14 @@ import rippleTestApi from '~/store/rippleApi.js';
 export default {
     state: {
         fundingTransactionObj: {
-            senderAddress: 'r4yaxwpoFirNwpCb55Z4NyETuHQDs21sG',
+            senderAddress: 'rUuxy4qsc2TFMfAYKjUAxHvpLpH6XJ57Vo',
             receiverAddress: '',
             sendAmount: '50',
         },
     
         fundingSignObj: {
             txJSON: '',
-            senderSecret: 'shtnehmSJZk5XNzHqdDpzx9DS5wkm'
+            senderSecret: 'sniBEUnzxtS9bBRpuHNp8mo8RckfR'
         },
 
         userWallet: {
@@ -92,7 +92,7 @@ export default {
               const blob = await vuexContext.dispatch('signPayment', vuexContext.state.fundingSignObj);
               await vuexContext.dispatch('submitPayment', blob);
             } catch (err) {
-              console.error(err);
+              console.error("funding" + vuexContext.state.fundingTransactionObj.senderAddress + err);
             }
           },
     
@@ -103,7 +103,7 @@ export default {
               const balance = await rippleTestApi.getAccountInfo(vuexContext.getters.userWalletAddress)
               this.commit('setUserWalletXrpBalance', balance.xrpBalance);
             } catch (err) {
-              console.log(err)
+              console.log("set balance" + err)
             }
           },
     
@@ -166,7 +166,7 @@ export default {
               }
               return response
             } catch (err) {
-              console.error(err)
+              console.error("suscribe" + err)
             }
         },
     }

@@ -8,7 +8,7 @@
 <script>
 import userAuthForm from '~/components/Auth/UserAuthForm'
 export default {
-    components:{
+    components: {
         userAuthForm
     },
     data() {
@@ -24,7 +24,7 @@ export default {
 
     methods: {
         //assign new ripple key upon sign up success
-        
+
     }
 }
 </script>
