@@ -3,6 +3,7 @@
         <h1>Transfer</h1>
         <!-- <wallet walletType="Funding Wallet" :walletAddress="user.walletAddress" :walletSecret="user.walletSecret"></wallet> -->
         <hr>
+        <!-- can just give this the whole user -->
         <wallet walletType="User Wallet" :walletAddress="user.walletAddress" :walletSecret="user.walletSecret"></wallet>
         
     </div>

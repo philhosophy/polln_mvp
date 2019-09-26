@@ -38,16 +38,19 @@ const createStore = () => {
 
          
 
-      // nuxtServerInit (vuexContext) {
-      //   if(!vuexContext.state.user){
-      //     console.log("user is null")
-      //     console.log(vuexContext.getters.user)
-      //   }
-      //   else if (vuexContext.state.user) {
-      //     console.log('user is not null')
-      //     console.log(vuexContext.getters.user)
-      //   }
-      // }
+      async nuxtServerInit (vuexContext) {
+        // console.log("server code...")
+        // const ip = await this.$axios.$post("https://s.altnet.rippletest.net:51234", {
+        //         "method": "account_currencies",
+        //         "params": [{
+        //             "account": "rJ9kLgNCbyW3tAW1TuDyvAyXdr8oKH3VeR",
+        //             "account_index": 0,
+        //             "ledger_index": "validated",
+        //             "strict": true
+        //         }]
+        //     })
+        //     console.log(ip)
+      }
     }
   })
 }

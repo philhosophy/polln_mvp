@@ -15,6 +15,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  // serverMiddleware:[
+  //   {path: '/promise', handler: '~/api/index.js'}
+  // ],
   /*
   ** Customize the progress-bar color
   */
@@ -41,6 +45,8 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
+
 
     [
       'nuxt-fire',
@@ -78,7 +84,14 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
   },
+
+  proxy: {
+    '/api/': 'https://s.altnet.rippletest.net:51234'
+  },
+
+  
   /*
   ** Build configuration
   */
@@ -92,6 +105,7 @@ export default {
 
   env: {
     rippleTestServer: 'wss://s.altnet.rippletest.net:51233', 
-    ripplePublicServer: 'wss://s1.ripple.com'
+    ripplePublicServer: 'wss://s1.ripple.com',
+    rippleJsonApi: "https://api.altnet.rippletest.net:51234"
   }
 }

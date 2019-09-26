@@ -3,14 +3,14 @@ import rippleTestApi from '~/store/rippleApi.js';
 export default {
     state: {
         fundingTransactionObj: {
-            senderAddress: 'rUuxy4qsc2TFMfAYKjUAxHvpLpH6XJ57Vo',
+            senderAddress: 'rwEURtDgUHMab39MmC4szg4HSM5MojTBjk',
             receiverAddress: '',
-            sendAmount: '50',
+            sendAmount: '200',
         },
     
         fundingSignObj: {
             txJSON: '',
-            senderSecret: 'sniBEUnzxtS9bBRpuHNp8mo8RckfR'
+            senderSecret: 'ssSqcB12Z6fdsjJscGPUPv4hL3SS2'
         },
 
         userWallet: {
@@ -99,7 +99,7 @@ export default {
           async setUserWalletXrpBalance(vuexContext) {
             try {
               await vuexContext.dispatch('connectRippleApi');
-              console.log('getting user wallet address: ' + vuexContext.getters.userWalletAddress)
+              console.log('getting balance for user wallet address: ' + vuexContext.getters.userWalletAddress)
               const balance = await rippleTestApi.getAccountInfo(vuexContext.getters.userWalletAddress)
               this.commit('setUserWalletXrpBalance', balance.xrpBalance);
             } catch (err) {
@@ -149,7 +149,16 @@ export default {
             return result.resultCode;
           },
     
-    
+          async getPaymentChannel(vuexContext, channelId){
+            try {
+              await vuexContext.dispatch('connectRippleApi');
+              const channel = await rippleTestApi.getPaymentChannel(channelId);
+              return channel
+            }
+            catch(err) {
+              console.error(err)
+            }
+          },
     
           async subscribeToAccount(vuexContext, address) {
             try {

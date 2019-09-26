@@ -14,6 +14,8 @@
             </vue-inline-text-editor>
         </b-row>
         <b-button class="btn btn-primary" to="/dashboard/transfer">Transfer</b-button>
+        <b-button class="btn btn-primary" to="/promise">My Promise</b-button>
+        <b-button class="btn btn-primary" @click="getWalletInfo">Get wallet account info</b-button>
     </b-container>
 </div>
 
@@ -39,7 +41,9 @@ export default {
     // },
 
     created(){
-        // this.$store.dispatch('setUserobjectRef', localForage.getItem('doc'))
+        
+        
+    
     },
 
     data() {
@@ -85,6 +89,10 @@ export default {
             console.log(obj)
             this.$fireStore.collection('users').doc(this.user.uid).update(obj)
         },
+
+        getWalletInfo(){
+            alert("hi")
+        }
 
     }
 
